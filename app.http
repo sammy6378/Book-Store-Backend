@@ -2,4 +2,4 @@
 GET http://localhost:8000
 
 ###
-Get http://localhost:8000/books
+Get http://localhost:8000/api/books

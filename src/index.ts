@@ -7,12 +7,16 @@ import { cors } from 'hono/cors'
 
 const app = new Hono()
 
-app.use('/*', cors())
+app.use('/api', cors({
+  origin: '*',
+  allowMethods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowHeaders: ['Content-Type', 'Authorization'],
+}))
 app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
 
-app.route('/', bookRouter);
+app.route('/api', bookRouter);
 
 assert(process.env.PORT, 'PORT is not defined')
 

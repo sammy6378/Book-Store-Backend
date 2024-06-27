@@ -6,6 +6,6 @@ export const booksTable = pgTable("books", {
     name: varchar("name"),
     Description: varchar("Description"),
     Author: varchar("Author"),
-    'Publication Year': integer("Publication Year"),
+    Year: integer("Publication Year"),
     Price: integer("Price"),
   });
