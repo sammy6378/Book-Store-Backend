@@ -3,14 +3,11 @@ import { Hono } from 'hono'
 import 'dotenv/config'
 import { assert } from 'console'
 import { bookRouter } from './books/book.router'
-// import { cors } from 'hono/cors'
-const cors = require('cors')
+import { cors } from 'hono/cors'
+
 const app = new Hono()
 
-app.use(cors({
-  origin: "*",
-  allowMethods: ['GET', 'POST', 'PUT', 'DELETE']
-}))
+app.use('/*', cors())
 app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
