@@ -6,7 +6,10 @@ import { bookRouter } from './books/book.router'
 import { cors } from 'hono/cors'
 const app = new Hono()
 
-app.use('/*', cors())
+app.use('*', cors({
+  origin: 'http://localhost:5173/',
+  allowMethods: ['GET', 'POST', 'PUT', 'DELETE']
+}))
 app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
