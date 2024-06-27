@@ -1,18 +1,21 @@
-import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
+import { cors } from 'hono/cors'
 import 'dotenv/config'
 import { assert } from 'console'
+import { serve } from '@hono/node-server'
 import { bookRouter } from './books/book.router'
-import { cors } from 'hono/cors'
 
 const app = new Hono()
 
-app.use('*', cors({
-  origin: 'https://book-store-frontend-delta-lime.vercel.app/',
-  allowMethods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowHeaders: ['Content-Type', 'Authorization','X-Requested-With', 'X-HTTP-Method-Override','Accept'],
-  credentials: true,
-}))
+app.use('*', cors())
+// app.use(cors({
+//   origin: '*',
+//   allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowHeaders: ['Content-Type', 'Authorization','Access-Control-Allow-Origin'],
+// }));
+
+
+
 
 app.get('/', (c) => {
   return c.text('Hello Hono!')

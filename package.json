@@ -6,7 +6,7 @@
     "gen": "drizzle-kit generate",
     "migrate": " tsx src/drizzle/migration.ts",
     "push": " drizzle-kit push",
-    "build":"tsc"
+    "build": "tsc"
   },
   "dependencies": {
     "@hono/node-server": "^1.11.4",
