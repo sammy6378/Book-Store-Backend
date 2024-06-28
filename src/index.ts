@@ -7,14 +7,14 @@ import { bookRouter } from './books/book.router'
 
 const app = new Hono()
 
-app.use('*', cors())
+// app.use('*', cors())
 
 // trying to work on cors, to be updated
-// app.use(cors({
-//   origin: '*',
-//   allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//   allowHeaders: ['Content-Type', 'Authorization','Access-Control-Allow-Origin'],
-// }));
+app.use(cors({
+  origin: 'https://book-store-frontend-delta-lime.vercel.app/',
+  allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowHeaders: ['Content-Type', 'Authorization','Access-Control-Allow-Origin'],
+}));
 
 
 
