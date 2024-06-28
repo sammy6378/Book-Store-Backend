@@ -8,6 +8,8 @@ import { bookRouter } from './books/book.router'
 const app = new Hono()
 
 app.use('*', cors())
+
+// trying to work on cors, to be updated
 // app.use(cors({
 //   origin: '*',
 //   allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
