@@ -10,20 +10,16 @@ const app = new Hono()
 // app.use('*', cors())
 
 // trying to work on cors, to be updated
-app.use('*',cors({
-  origin: 'https://book-store-frontend-delta-lime.vercel.app/',
-  allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowHeaders: ['Content-Type', 'Authorization','Access-Control-Allow-Origin'],
-}));
+app.use('/api/*', cors())
 
 
 
 
-app.get('/', (c) => {
+app.get('/api', (c) => {
   return c.text('Hello Hono!')
 })
 
-app.route('/', bookRouter);
+app.route('/api', bookRouter);
 
 assert(process.env.PORT, 'PORT is not defined')
 
