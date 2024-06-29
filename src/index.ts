@@ -15,7 +15,7 @@ app.use('/api/*', cors())
 
 
 
-app.get('/api', (c) => {
+app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
 
