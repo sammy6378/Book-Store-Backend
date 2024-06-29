@@ -6,9 +6,9 @@ import {getAllBooks, getBookN,createBookN,updateBookN,searchBookN,deleteBookN } 
 export const bookRouter = new Hono();
 
 // restraunt table
-bookRouter.get("/books", getAllBooks)
-bookRouter.get("/book/:id", getBookN)
-bookRouter.post("/book", createBookN)
-bookRouter.delete("/book/:id",deleteBookN)
-bookRouter.put("/book/:id",updateBookN)
-bookRouter.get("/book/:id",searchBookN)
+bookRouter.get("/api/books", getAllBooks)
+bookRouter.get("/api/book/:id", getBookN)
+bookRouter.post("/api/books", createBookN)
+bookRouter.delete("/api/book/:id",deleteBookN)
+bookRouter.put("/api/book/:id",updateBookN)
+bookRouter.get("/api/book/:id",searchBookN)
